@@ -11,6 +11,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.tdn.customerDAO.CustomerDAOI;
+import com.tdn.customerDAO.CustomerDAOImp;
 import com.tdn.model.Customer;
 import com.tdn.utility.Hiberutility;
 
@@ -40,15 +42,19 @@ public class AddcustomerServlet extends HttpServlet {
 			customer.setFirstName(firstName);
 			customer.setLastName(lastName);
 			customer.setMobileNo(mobileNo);
-			customer.setAddress(address);;
+			customer.setAddress(address);
+			CustomerDAOI customerDAO = new CustomerDAOImp();
+			Long r=customerDAO.insertcustomer(customer);
+			System.out.println("r "+r);
 			
-			SessionFactory sessionFactory = Hiberutility.getSessionFactory();
+			/*SessionFactory sessionFactory = Hiberutility.getSessionFactory();
 			Session session = sessionFactory.openSession();
 			Transaction tx= session.beginTransaction();
 			session.save(customer);
 			session.flush();
 			tx.commit();
 			session.close();
+			*/
 			response.sendRedirect("sucess.jsp");
 		
 			}

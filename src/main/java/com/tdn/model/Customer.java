@@ -20,10 +20,10 @@ public class Customer {
 	@Column(name="Last_Name")
 	private String lastName;
 	
-	@Column(name="mobile-no")
+	@Column(name="Mobile_no")
 	private String mobileNo;
 	
-	@Column(name="address")
+	@Column(name="Address")
 	private String address;
 	
 	public Customer() {		
@@ -38,14 +38,7 @@ public class Customer {
 		this.address = address;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -76,6 +69,13 @@ public class Customer {
 
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
+	}
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 		

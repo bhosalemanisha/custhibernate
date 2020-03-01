@@ -10,7 +10,7 @@
 <div class="container">
  <%@include file="menu.jsp" %>
  
-  <form action="<%=request.getContextPath()%>/AddcustomerServlet" method="post">
+  <form action="AddcustomerServlet" method="post">
  	  <div class="form-group">
 	    <label for="inputFirstName">First Name</label>
 	    <input type="text" class="form-control" id="inputFirstName"  aria-describedby="emailHelp" name="first-name" placeholder="Enter First Name"/>	    
