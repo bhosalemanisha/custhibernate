@@ -2,6 +2,8 @@ package com.tdn.customerDAO;
 
 
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -23,5 +25,17 @@ public class CustomerDAOImp implements CustomerDAOI{
 		return id;
 
 			}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Customer> getallcustomer() {
+		Session session = sessionFactory.openSession();
+		List<Customer> customerlist=session.createCriteria(Customer.class).list();		
+		session.close();
+		return customerlist;
+
+		
+		
+	}
 
 }
