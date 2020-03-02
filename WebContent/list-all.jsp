@@ -36,7 +36,7 @@
                                 <th>LastName</th>
                                  <th>mobile number</th>
                                 <th>Address</th>
-                               
+                               <th>Actions</th>
                                
                             </tr>
                         </thead>
@@ -60,6 +60,11 @@
                                     <td>
                                         <c:out value="${customer.address}" />
                                     </td>
+                                                                      
+                                   <td><a href="EditServlet?id=${customer.id}">Edit</a>
+                                  <a href="DeleteServlet?id=${customer.id}">Delete</a>
+                                   </td>
+                                   
                                    
                                 </tr>
                             </c:forEach>

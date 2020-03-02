@@ -38,4 +38,34 @@ public class CustomerDAOImp implements CustomerDAOI{
 		
 	}
 
+	@Override
+	public Customer findById(long id) {
+		Session session = sessionFactory.openSession();
+		Customer customer= session.get(Customer.class, id);
+		session.close();
+		return customer;
+	}
+
+	@Override
+	public void updatecustomer(Customer customer) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(customer);
+		tx.commit();
+		session.close();
+		//return id;
+	}
+
+	@Override
+	public void deletecustomer(Customer customer) {
+		
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.delete(customer);
+		tx.commit();
+		session.close();
+		
+	}
+
+	
 }
