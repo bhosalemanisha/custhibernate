@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.tdn.model.Customer;
+import com.tdn.model.Userlogin;
 import com.tdn.utility.Hiberutility;
 
 public class CustomerDAOImp implements CustomerDAOI{
@@ -67,5 +68,7 @@ public class CustomerDAOImp implements CustomerDAOI{
 		
 	}
 
+	
+	
 	
 }
